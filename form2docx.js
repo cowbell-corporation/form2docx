@@ -25,13 +25,14 @@ const subject       = '[form2docx] Your Google Forms accepted the post.';
 const mailBody      = `
 Your Google Forms accepted the post.
 The Google Docs document with the same content as the attached Word file is at the following URL.
+(You may need to request access privileges)
 `;
 const errorSubject  = '[form2docx] An error has occurred.';
 const errorMailBody = `
 The form2docx script was not executed for the following reasons.
 Check your configuration.
 `;
-const suffixField   = 'name';
+const suffixField   = '';
 const fileFormat    = 'docx';
 const placeHolder   = [
 	'name',
