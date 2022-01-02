@@ -2,7 +2,7 @@
 
 ## What's this?
 
-"form2docx" is [Google Apps Script](https://workspace.google.co.jp/intl/en/products/apps-script/) (GAS) that converts contents retrieved by Google Forms into Microsoft Word file (.docx) or OpenDocument Text file (.odt) and sends it as email attachment.
+"form2docx" is a [Google Apps Script](https://workspace.google.co.jp/intl/en/products/apps-script/) (GAS) that converts contents retrieved by Google Forms into Microsoft Word file (.docx) or OpenDocument Text file (.odt) and sends it as email attachment.
 
 ## Requires
 
