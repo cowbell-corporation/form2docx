@@ -3,7 +3,7 @@
  * @author COWBELL Corporation <info@cowbell.jp>
  * @copyright COWBELL Corporation 2022-
  * @license The MIT License
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 
@@ -16,6 +16,7 @@
  * @const {string} errorSubject        - Subject of the error notification email
  * @const {string} errorMailBody       - Body of the error notification email (use template literals)
  * @const {string} suffixField         - Google form field name to be used as a suffix in the generated file
+ * @const {string} timeZone            - Time zone when the script gets the date (refer to getDate() function) (*)
  * @const {stging} fileFormat          - Format of the generated file (docx or odt) (*)
  * @const {Array.<string>} placeHolder - Google form fields associated with the placeholder name in the template (*)
  */
@@ -33,6 +34,7 @@ The form2docx script was not executed for the following reasons.
 Check your configuration.
 `;
 const suffixField   = '';
+const timeZone      = 'GMT';
 const fileFormat    = 'docx';
 const placeHolder   = [
 	'name',
@@ -75,12 +77,12 @@ const templateFile = DriveApp.getFileById(fileId);
 
 /**
  * Get date and time
+ * @param {string} tz - timezone
  * @returns {string} String in yyyy-MM-dd_HH-mm-ss format
  */
-function getDate() {
+function getDate(tz) {
 
-	const date = new Date();
-	const formattedDate = Utilities.formatDate(date, 'JST',  'yyyy-MM-dd_HH-mm-ss');
+	const formattedDate = Utilities.formatDate(new Date(), tz,  'yyyy-MM-dd_HH-mm-ss');
 
 	return formattedDate;
 
@@ -110,7 +112,7 @@ function createNewGdoc(itemResponses) {
 	});
 
 	newGdoc.saveAndClose();
-	fileSuffix != undefined ? newFile.setName(getDate() + `_${fileSuffix}`) : newFile.setName(getDate());
+	fileSuffix != undefined ? newFile.setName(getDate(timeZone) + `_${fileSuffix}`) : newFile.setName(getDate(timeZone));
 
 	return newId;
 

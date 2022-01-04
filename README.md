@@ -28,6 +28,8 @@
 
 ## Changelog
 
+* 1.0.1 (2022-01-04)
+  * Add 'timeZone' constant
 * 1.0.0 (2022-01-01)
   * Opening to the public
 
