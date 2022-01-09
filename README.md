@@ -25,6 +25,7 @@
 
 * Please use at your own risk
 * Generated .docx / .odt files are archived in Google Drive
+* Limited number of recipients per day （see [Quotas for Google Services](https://developers.google.com/apps-script/guides/services/quotas))
 
 ## Changelog
 
